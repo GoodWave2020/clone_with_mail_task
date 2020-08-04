@@ -1,3 +1,3 @@
 <h1><%= @user.name %>のページ</h1>
-<p><%= @user.user_image %></p>
+<p><%= image_tag @user.user_image.url %></p>
 <p>メールアドレス: <%= @user.email %></p>

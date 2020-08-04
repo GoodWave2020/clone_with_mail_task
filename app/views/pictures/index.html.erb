@@ -1,29 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Pictures</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @pictures.each do |picture| %>
-      <tr>
-        <td><%=image_tag picture.image.thumb.url %></td>
-        <td><%= picture.content %></td>
-        <td><%= link_to 'Show', picture %></td>
+      <p>
+        <%=image_tag picture.user.user_image.thumb.url %>
+        <%= picture.user.name %>
+      </p>
+      <p><%=image_tag picture.image.thumb.url %></p>
+      <p><%= picture.content %></p>
+      <p>
+        <%= link_to 'Show', picture %>
         <%= link_to 'Edit', edit_picture_path(picture) if @current_user == picture.user %>
         <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } if @current_user == picture.user%>
-      </tr>
+      </p>
     <% end %>
-  </tbody>
-</table>
-
 <br>
-
 <%= link_to 'New Picture', new_picture_path %>

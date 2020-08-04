@@ -2,6 +2,7 @@ class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
   before_action :current_user
   before_action :authenticate_user
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   def index
     @pictures = Picture.all
@@ -43,8 +44,6 @@ class PicturesController < ApplicationController
     end
   end
 
-  # DELETE /pictures/1
-  # DELETE /pictures/1.json
   def destroy
     @picture.destroy
     respond_to do |format|
@@ -54,12 +53,10 @@ class PicturesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_picture
       @picture = Picture.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def picture_params
       params.require(:picture).permit(:image, :content)
     end

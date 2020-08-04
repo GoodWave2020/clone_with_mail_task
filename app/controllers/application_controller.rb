@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path
     end
   end
+
+  def check_user
+    if @current_user != @picture.user
+      flash[:notice] = "you can't destroy or edit other user's pi
+      ctures"
+      redirect_to pictures_path
+    end
+  end
 end

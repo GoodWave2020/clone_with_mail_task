@@ -1,28 +1,20 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
 
-  # GET /pictures
-  # GET /pictures.json
   def index
     @pictures = Picture.all
   end
 
-  # GET /pictures/1
-  # GET /pictures/1.json
   def show
   end
 
-  # GET /pictures/new
   def new
     @picture = Picture.new
   end
 
-  # GET /pictures/1/edit
   def edit
   end
 
-  # POST /pictures
-  # POST /pictures.json
   def create
     @picture = Picture.new(picture_params)
 
@@ -37,8 +29,6 @@ class PicturesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /pictures/1
-  # PATCH/PUT /pictures/1.json
   def update
     respond_to do |format|
       if @picture.update(picture_params)

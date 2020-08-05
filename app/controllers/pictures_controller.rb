@@ -27,6 +27,7 @@ class PicturesController < ApplicationController
     @picture = current_user.pictures.build(picture_params)
     respond_to do |format|
       if @picture.save
+        PictureMailer.picture_mail(@picture).deliver
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
         format.json { render :show, status: :created, location: @picture }
       else

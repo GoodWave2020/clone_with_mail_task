@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:new, :create, :edit, :update, :show]
+  resources :favorites, only: [:create, :destroy, :show]
+  get '/users/:id/favorites', to: 'users#favorites'
 end

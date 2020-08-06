@@ -1,8 +1,26 @@
-<h1>Log in</h1>
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "Log in" %>
-<% end %>
+<div class="top_wrapper">
+  <div class="login_wrap text-center">
+    <div class="panel panel-default visible-lg-inline-block
+                                    visible-md-inline-block
+                                    visible-sm-inline-block
+                                    visible-xs-inline-block">
+      <div class="panel-body">
+        <%= image_tag "logo_other.png", class: "logo" %>
+        <%= form_with(scope: :session, url: sessions_path, local: true, class: "login_form") do |f| %>
+          <p><%= f.email_field :email, :placeholder => I18n.t("activerecord.attributes.user.email") %></p>
+          <p><%= f.password_field :password, :placeholder => I18n.t("activerecord.attributes.user.password") %></p>
+          <%= f.submit "ログイン", class: "btn btn-info" %>
+        <% end %>
+      </div>
+    </div><br>
+    <div class="panel panel-default visible-lg-inline-block
+                                    visible-md-inline-block
+                                    visible-sm-inline-block
+                                    visible-xs-inline-block">
+      <div class="panel-body login_btn">
+        アカウントをお持ちではないですか？
+        <%= link_to "登録", new_user_path %>
+      </div>
+    </div>
+  </div>
+  </div>

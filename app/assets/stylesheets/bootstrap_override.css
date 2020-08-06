@@ -33,3 +33,11 @@ input {
 .signup_btn {
   width: 320px;
 }
+
+.navbar_logo {
+  width: 120px;
+}
+
+.navbar {
+  border-radius: 0;
+}

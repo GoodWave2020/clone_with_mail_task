@@ -38,6 +38,21 @@ input {
   width: 120px;
 }
 
-.navbar {
+* {
   border-radius: 0;
+}
+
+.index_wrap {
+
+}
+
+.panel {
+  margin:20px auto;
+  border: 1.5px solid;
+  border-color: rgb(181, 235, 228);
+  width: 303px;
+}
+
+.panel-body {
+  padding: 0;
 }

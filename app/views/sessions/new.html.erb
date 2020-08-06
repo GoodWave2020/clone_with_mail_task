@@ -11,6 +11,9 @@
           <p><%= f.password_field :password, :placeholder => I18n.t("activerecord.attributes.user.password") %></p>
           <%= f.submit "ログイン", class: "btn btn-info" %>
         <% end %>
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key} text-danger") %>
+        <% end %>
       </div>
     </div><br>
     <div class="panel panel-default visible-lg-inline-block

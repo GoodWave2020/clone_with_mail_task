@@ -1,9 +1,6 @@
 <div class="contents_wrapper">
   <div class="picture_wrap text-center">
-    <div class="panel panel-default visible-lg-inline-block
-                                    visible-md-inline-block
-                                    visible-sm-inline-block
-                                    visible-xs-inline-block">
+    <div class="panel panel-default">
       <div class="panel-body">
         <%= form_with(model: @picture, local: true, url: choose_new_or_edit) do |form| %>
           <% if @picture.errors.any? %>

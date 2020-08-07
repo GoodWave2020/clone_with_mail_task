@@ -8,10 +8,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def check_user
+  def check_user_for_user
+    if @current_user != @user
+      flash[:notice] = "you can't destroy or edit other user's profile"
+      redirect_to pictures_path
+    end
+  end
+
+  def check_user_for_picture
     if @current_user != @picture.user
-      flash[:notice] = "you can't destroy or edit other user's pi
-      ctures"
+      flash[:notice] = "you can't destroy or edit other user's pictures"
       redirect_to pictures_path
     end
   end

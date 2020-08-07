@@ -1,6 +1,6 @@
 <div class="contents_wrapper">
   <div class="login_wrap text-center">
-    <div class="panel panel-default panel_center>
+    <div class="panel panel-default login_panel">
       <div class="panel-body">
         <%= image_tag "logo_other.png", class: "logo" %>
         <%= form_with(scope: :session, url: sessions_path, local: true, class: "login_form") do |f| %>
@@ -13,7 +13,7 @@
         <% end %>
       </div>
     </div><br>
-    <div class="panel panel-default>
+    <div class="panel panel-default login_panel">
       <div class="panel-body login_btn">
         アカウントをお持ちではないですか？
         <%= link_to "登録", new_user_path %>

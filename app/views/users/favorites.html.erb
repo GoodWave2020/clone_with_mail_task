@@ -1,12 +1,20 @@
-<h1><%= @user.name %>のお気に入り</h1>
-<% @user.favorite_pictures.each do |picture| %>
-  <p>
-    <%=image_tag picture.user.user_image.thumb.url %>
-    <%= picture.user.name %>
-  </p>
-  <p><%=image_tag picture.image.thumb.url %></p>
-  <p><%= picture.content %></p>
-  <p>
-    <%= link_to 'Show', picture %>
-  </p>
-<% end %>
+<h1 class="text-center"><%= @user.name %>のお気に入り</h1>
+<div class="row">
+  <% @user.favorite_pictures.each do |picture| %>
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <div class="favorite_articles">
+        <div class="user_post panel panel-default">
+          <div class="post_contents panel-body">
+            <div class="panel-heading">
+              <%=image_tag picture.user.user_image.thumb.url, class: "icon" %>
+              <%= picture.user.name %>
+            </div>
+            <%=image_tag picture.image.thumb.url %>
+            <%= picture.content %><br>
+            <%= link_to 'Show', picture %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

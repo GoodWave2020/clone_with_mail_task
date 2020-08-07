@@ -32,7 +32,6 @@
                 <li class="list_icon">
                   <%= link_to user_path(@current_user.id), id: "icon_link" do %>
                     <%= image_tag @current_user.user_image.thumb.url, class: "icon" %>
-                    : <%= @current_user.name  %>
                   <% end %>
                 </li>
                 <li><%= link_to "Index", pictures_path %></li>

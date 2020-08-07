@@ -98,3 +98,8 @@ input {
   width:100px;
   display: inline-block;
 }
+
+.favorite_articles,
+.login_panel {
+  display: inline-block;
+}

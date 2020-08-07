@@ -13,7 +13,7 @@
   <body>
     <div class="wrapper">
       <% if logged_in? %>
-      <nav class="navbar navbar-light bg-info">
+      <nav class="navbar navbar-light navbar-fixed-top bg-info">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
@@ -42,10 +42,12 @@
         </div>
       </nav>
       <% end %>
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "#{key} text-center") %>
-      <% end %>
-      <%= yield %>
+      <div class="article">    
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key} text-center") %>
+        <% end %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

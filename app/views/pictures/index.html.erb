@@ -1,20 +1,19 @@
-    <div class="index_wrap">
-      <% @pictures.each do |picture| %>
-        <div class="user_post panel panel-defailt">
-          <div class="post_contents panel-body">
-            <div class="panel-heading">
-              <%=image_tag picture.user.user_image.thumb.url, class: "icon" %>
-              <%= picture.user.name %>
-            </div>
-            <%=image_tag picture.image.thumb.url %><br>
-            <%= picture.content %><br>
-            <%= picture.created_at %><br>
-            <%= link_to 'Show', picture %>
-            <%= link_to 'Edit', edit_picture_path(picture) if @current_user == picture.user %>
-            <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } if @current_user == picture.user%>
-          </div>
-        </div>
-      <% end %>
+
+<% @pictures.each do |picture| %>
+  <div class="user_post panel panel-defailt">
+    <div class="post_contents panel-body">
+      <div class="panel-heading">
+        <%=image_tag picture.user.user_image.thumb.url, class: "icon" %>
+        <%= picture.user.name %>
+      </div>
+      <%=image_tag picture.image.thumb.url %><br>
+      <%= picture.content %><br>
+      <%= picture.created_at %><br>
+      <%= link_to 'Show', picture %>
+      <%= link_to 'Edit', edit_picture_path(picture) if @current_user == picture.user %>
+      <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } if @current_user == picture.user%>
     </div>
+  </div>
+<% end %>
 <br>
 <%= link_to 'New Picture', new_picture_path %>

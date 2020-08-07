@@ -1,5 +1,7 @@
-<h1><%= @user.name %>のページ</h1>
-<p><%= image_tag @user.user_image.show_icon.url, class: "icon" %></p>
-<p>メールアドレス: <%= @user.email %></p>
-<%= link_to 'お気に入り一覧', "/users/#{@user.id}/favorites" %>
-<%= link_to "edit", edit_user_path(@user.id) %>
+<div class="text-center">
+  <h1><%= @user.name %>のページ</h1>
+  <p><%= image_tag @user.user_image.show_icon.url, class: "icon" %></p>
+  <p>メールアドレス: <%= @user.email %></p>
+  <%= link_to 'お気に入り一覧', "/users/#{@user.id}/favorites" %>
+  <%= link_to "edit", edit_user_path(@user.id) %>
+</div>

@@ -1,23 +1,38 @@
-<%= form_with(model: @picture, local: true, url: choose_new_or_edit) do |form| %>
-  <% if @picture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
-      <ul>
-      <% @picture.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="contents_wrapper">
+  <div class="picture_wrap text-center">
+    <div class="panel panel-default visible-lg-inline-block
+                                    visible-md-inline-block
+                                    visible-sm-inline-block
+                                    visible-xs-inline-block">
+      <div class="panel-body">
+        <%= form_with(model: @picture, local: true, url: choose_new_or_edit) do |form| %>
+          <% if @picture.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+              <ul>
+              <% @picture.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="picture_field input-group">
+            <label class="input-group-btn">
+              <span class="btn btn-primary">
+                <%= I18n.t("activerecord.attributes.picture.image") %>
+                <%= form.file_field :image %>
+              </span>
+            </label>
+            <input type="text" class="form-control" readonly="">
+          </div>
+          <div class="picture_field">
+            <%= form.text_area :content, :placeholder => I18n.t("activerecord.attributes.picture.content"), class: "form-control" %>
+          </div>
+          <div class="actions">
+            <%= form.submit %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
   </div>
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

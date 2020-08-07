@@ -5,7 +5,11 @@
         <%= form_with(model: @picture, local: true, url: choose_new_or_edit) do |form| %>
           <% if @picture.errors.any? %>
             <div id="error_explanation">
-              <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+              <h2>
+                <%= @picture.errors.count %>
+                <%= I18n.t("activerecord.errors.messages.s_error") %>
+                <%= I18n.t("activerecord.errors.messages.because") %>
+              </h2>
               <ul>
               <% @picture.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
@@ -21,6 +25,7 @@
               <span class="btn btn-primary">
                 <%= I18n.t("activerecord.attributes.picture.image") %>
                 <%= form.file_field :image %>
+                <%= form.hidden_field :image_cache %>
               </span>
             </label>
             <input type="text" class="form-control" readonly="">

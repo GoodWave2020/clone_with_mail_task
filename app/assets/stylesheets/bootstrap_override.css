@@ -60,3 +60,17 @@ input {
 .icon {
   border-radius: 50%;
 }
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.icon-bar {
+  background-color:#337ab7;
+}
+
+#icon_link {
+  display: block;
+  padding: 0;
+}

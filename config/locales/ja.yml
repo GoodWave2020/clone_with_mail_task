@@ -1,8 +1,20 @@
 ---
 ja:
+  post_added_to_favorites: さんの投稿をお気に入りに追加しました
+  post_removed_from_favorites: さんの投稿をお気に入り解除しました
+  you've_created_the_post: 投稿を作成しました
+  you've_changed_the_post: 投稿を編集しました
+  you've_deleted_the_post: 投稿を削除しました
+  you_don't_have_an_account?: アカウントをお持ちではないですか？
+  you_can't_destroy_or_edit_other_user's_pictures: 他のユーザーの投稿の編集はできません
+  you_can't_edit_other_user's_profile: 他のユーザーのプロフィールの編集はできません
+  login_needed: ログインが必要です。
+  Are_you_sure?: 本当に削除しますか？
   activerecord:
     errors:
       messages:
+        because: 理由は以下です
+        s_error: 件のエラー
         record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
@@ -141,10 +153,14 @@ ja:
   helpers:
     select:
       prompt: 選択してください
+      show: 詳細
+      back: 戻る
     submit:
-      create: 登録する
-      submit: 保存する
-      update: 更新する
+      create: 登録
+      submit: 保存
+      edit: 編集
+      update: 更新
+      login: ログイン
   number:
     currency:
       format:

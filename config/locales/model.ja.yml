@@ -15,3 +15,6 @@ ja:
         password: パスワード
         password_confirmation: 確認用パスワード
         remember_me: ログインを記憶
+      favorite:
+        favorite_index: お気に入り一覧
+        s_favorite: のお気に入り

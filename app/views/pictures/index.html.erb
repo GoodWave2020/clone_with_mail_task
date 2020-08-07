@@ -10,7 +10,7 @@
       <%= picture.created_at %><br>
       <%= link_to 'Show', picture %>
       <%= link_to 'Edit', edit_picture_path(picture) if @current_user == picture.user %>
-      <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } if @current_user == picture.user%>
+      <%= link_to 'Destroy', picture, method: :delete, data: { confirm: I18n.t(:Are_you_sure?) } if @current_user == picture.user%>
     </div>
   </div>
 <% end %>

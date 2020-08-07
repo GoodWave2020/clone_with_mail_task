@@ -6,7 +6,7 @@
         <%= form_with(scope: :session, url: sessions_path, local: true, class: "login_form") do |f| %>
           <p><%= f.email_field :email, :placeholder => I18n.t("activerecord.attributes.user.email") %></p>
           <p><%= f.password_field :password, :placeholder => I18n.t("activerecord.attributes.user.password") %></p>
-          <%= f.submit "ログイン", class: "btn btn-info" %>
+          <%= f.submit I18n.t('helpers.submit.login'), class: "btn btn-info" %>
         <% end %>
         <% flash.each do |key, value| %>
           <%= content_tag(:div, value, class: "#{key} text-danger") %>
@@ -15,8 +15,8 @@
     </div><br>
     <div class="panel panel-default login_panel">
       <div class="panel-body login_btn">
-        アカウントをお持ちではないですか？
-        <%= link_to "登録", new_user_path %>
+        <%= I18n.t("you_don't_have_an_account?") %>
+        <%= link_to I18n.t('helpers.submit.create'), new_user_path %>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-<h1 class="text-center"><%= @user.name %>のお気に入り</h1>
+<h1 class="text-center"><%= @user.name %><%= I18n.t("activerecord.attributes.favorite.s_favorite") %></h1>
 <div class="row">
   <% @user.favorite_pictures.each do |picture| %>
     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
@@ -11,7 +11,7 @@
             </div>
             <%=image_tag picture.image.thumb.url %>
             <%= picture.content %><br>
-            <%= link_to 'Show', picture %>
+            <%= link_to I18n.t("helpers.select.show"), picture %>
           </div>
         </div>
       </div>

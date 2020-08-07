@@ -155,6 +155,9 @@ ja:
       prompt: 選択してください
       show: 詳細
       back: 戻る
+      destroy: 削除
+      favorite: お気に入りにする
+      rm_favorite: お気に入りを解除する
     submit:
       create: 登録
       submit: 保存

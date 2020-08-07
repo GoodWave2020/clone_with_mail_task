@@ -8,9 +8,9 @@
       <%=image_tag picture.image.thumb.url %><br>
       <%= picture.content %><br>
       <%= picture.created_at %><br>
-      <%= link_to 'Show', picture %>
-      <%= link_to 'Edit', edit_picture_path(picture) if @current_user == picture.user %>
-      <%= link_to 'Destroy', picture, method: :delete, data: { confirm: I18n.t(:Are_you_sure?) } if @current_user == picture.user%>
+      <%= link_to I18n.t("helpers.select.show"), picture %>
+      <%= link_to I18n.t("helpers.submit.edit"), edit_picture_path(picture) if @current_user == picture.user %>
+      <%= link_to I18n.t("helpers.select.destroy"), picture, method: :delete, data: { confirm: I18n.t(:Are_you_sure?) } if @current_user == picture.user%>
     </div>
   </div>
 <% end %>

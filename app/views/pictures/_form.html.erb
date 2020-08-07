@@ -16,6 +16,9 @@
               </ul>
             </div>
           <% end %>
+          <div class="picture_field">
+            <%= image_tag(@picture.image.thumb.url) if @picture.image && @picture.image.url %>
+          </div>
           <div class="picture_field input-group">
             <label class="input-group-btn">
               <span class="btn btn-primary">
@@ -29,7 +32,7 @@
             <%= form.text_area :content, :placeholder => I18n.t("activerecord.attributes.picture.content"), class: "form-control" %>
           </div>
           <div class="actions">
-            <%= form.submit %>
+            <%= form.submit class: "submit"%>
           </div>
         <% end %>
       </div>

@@ -83,3 +83,18 @@ input {
 .picture_field {
   margin-bottom: 20px;
 }
+
+.confirm_image {
+  width: 300px;
+  height:300px;
+  object-fit: cover;
+}
+
+.confirm_btn_field {
+  text-align: center;
+}
+
+.confirm_btn {
+  width:100px;
+  display: inline-block;
+}

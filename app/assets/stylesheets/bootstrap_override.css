@@ -46,14 +46,14 @@ input {
 
 }
 
-.panel {
+.user_post {
   margin:20px auto;
   border: 1.5px solid;
   border-color: rgb(181, 235, 228);
   width: 303px;
 }
 
-.panel-body {
+.post_contents {
   padding: 0;
 }
 
